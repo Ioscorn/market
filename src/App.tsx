@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from './contexts/AuthContext';
 import { CartProvider } from './contexts/CartContext';
@@ -24,8 +23,11 @@ import { AdminShopsPage } from './pages/AdminShopsPage';
 import { AdminUsersPage } from './pages/AdminUsersPage';
 
 function App() {
+  // use basename when running on GitHub Pages under /market
+  const basename = import.meta.env.PROD ? '/market' : '/';
+
   return (
-    <Router>
+    <Router basename={basename}>
       <AuthProvider>
         <CartProvider>
           <div className="flex flex-col min-h-screen bg-gray-100">
