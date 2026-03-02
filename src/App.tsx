@@ -24,6 +24,7 @@ import { AdminUsersPage } from './pages/AdminUsersPage';
 
 function App() {
   // use basename when running on GitHub Pages under /market
+  // (project repo is 'market', not 'market2')
   const basename = import.meta.env.PROD ? '/market' : '/';
 
   return (
